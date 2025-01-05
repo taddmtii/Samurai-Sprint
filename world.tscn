@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://1urb7vfmw1pg"]
+
+[ext_resource type="PackedScene" uid="uid://b7cqw85apxagy" path="res://Player/Samurai.tscn" id="1_fieyk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cggnv"]
+load_path = "res://.godot/imported/Background.png-f56fbe01319acbfcc6482fb884757d43.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1hlm"]
+size = Vector2(156.5, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08mgl"]
+size = Vector2(2341, 149)
+
+[node name="World" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575.75, 339)
+scale = Vector2(2.39688, 2.54412)
+texture = SubResource("CompressedTexture2D_cggnv")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(1723, 338)
+scale = Vector2(2.39688, 2.54412)
+texture = SubResource("CompressedTexture2D_cggnv")
+
+[node name="Samurai" parent="." instance=ExtResource("1_fieyk")]
+position = Vector2(107, 353)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-160, 89)
+
+[node name="LeftCollisionWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(91, 193)
+shape = SubResource("RectangleShape2D_g1hlm")
+
+[node name="RightCollisionWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2541, 166)
+shape = SubResource("RectangleShape2D_g1hlm")
+
+[node name="FloorCollisionWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1335, 362)
+shape = SubResource("RectangleShape2D_08mgl")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -1.0
+offset_top = 380.0
+offset_right = 2302.0
+offset_bottom = 420.0
