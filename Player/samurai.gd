@@ -6,19 +6,27 @@ const JUMP_VELOCITY = -400.0
 
 @onready var anim = get_node("AnimatedSprite2D")
 
+@export var is_alive = true
+@export var attacking = false
+
 func _ready() -> void:
-	anim.play("Idle")
+	anim.sprite_frames.set_animation_loop("Attack", false)
+	anim.sprite_frames.set_animation_loop("Die", false)
+	
+func _process(delta):
+	if Input.is_action_just_pressed("Attack"): #checks to see if input is the attack button
+		attack() #attack
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta #brings player model down
-		anim.play("Fall") #play fall animation as we go down.
+		#anim.play("Fall") #play fall animation as we go down.
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		anim.play("Jump")
+		#anim.play("Jump")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -29,9 +37,44 @@ func _physics_process(delta: float) -> void:
 		get_node("AnimatedSprite2D").flip_h = false
 	if direction:
 		velocity.x = direction * SPEED
-		anim.play("Run")
+		#anim.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		anim.play("Idle")
+		#anim.play("Idle")
 
-	move_and_slide()
+	update_animation() #update animation every frame.
+	move_and_slide() #allows movement
+
+func attack():
+	var overlapping_objects = $SwordHit.get_overlapping_areas() #checks for everything in collision area, puts into list.
+	for area in overlapping_objects:
+		var parent = area.get_parent()
+		if parent.fox_health > 0:
+			parent.take_damage() #will hit anything in that area.
+		elif parent.fox_health == 0:
+			parent.queue_free()
+		
+	attacking = true
+	anim.play("Attack")
+	await anim.animation_finished
+	attacking = false
+	
+func update_animation(): #Handles all move and jump animation logic.
+	if is_alive:
+		if !attacking: #as long as we are not attacking
+			if velocity.x != 0: #if we are not idle
+				anim.play("Run")
+			else:
+				anim.play("Idle")
+			if velocity.y < 0:
+				anim.play("Jump")
+			if velocity.y > 0 and is_alive:
+				anim.play("Fall")
+	
+
+
+func die():
+	is_alive = false
+	anim.play("Die")
+	await anim.animation_finished
+	get_tree().reload_current_scene()

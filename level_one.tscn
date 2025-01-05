@@ -1,0 +1,201 @@
+[gd_scene load_steps=10 format=4 uid="uid://bfra765op7anu"]
+
+[ext_resource type="Texture2D" uid="uid://xkhjren2lu5t" path="res://Sunny Land/Assets/Environments/SunnyLand/Layers/tileset.png" id="1_s5r0o"]
+[ext_resource type="Texture2D" uid="uid://dmyuqlik6iitp" path="res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png" id="2_6byak"]
+[ext_resource type="PackedScene" uid="uid://b7cqw85apxagy" path="res://Player/Samurai.tscn" id="3_mmskx"]
+[ext_resource type="Script" path="res://area_2d.gd" id="4_px4k6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u8rxo"]
+texture = ExtResource("1_s5r0o")
+1:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+20:4/0 = 0
+22:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+20:5/0 = 0
+22:5/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+17:7/0 = 0
+19:7/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+19:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+7:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+15:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+7:13/0 = 0
+9:13/0 = 0
+11:13/0 = 0
+13:13/0 = 0
+7:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+15:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+9:15/0 = 0
+2:16/0 = 0
+4:16/0 = 0
+11:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+11:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+17:18/0 = 0
+19:18/0 = 0
+21:18/0 = 0
+1:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+17:20/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nv8gj"]
+sources/0 = SubResource("TileSetAtlasSource_u8rxo")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34m4w"]
+size = Vector2(156.5, 650)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_683ac"]
+size = Vector2(128.5, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sq3ka"]
+size = Vector2(4909.5, 149)
+
+[node name="level-one" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADABQAAAABAAEAAAAEABQAAAADAAEAAAAFABQAAAADAAEAAAAGABQAAAADAAEAAAAHABQAAAADAAEAAAAIABQAAAADAAEAAAAJABQAAAADAAEAAAAKABQAAAAFAAEAAAADABUAAAABAAMAAAAEABUAAAABAAMAAAAFABUAAAABAAMAAAAGABUAAAABAAMAAAAHABUAAAABAAMAAAAIABUAAAABAAMAAAAJABUAAAABAAMAAAAKABUAAAABAAMAAAAKABYAAAABAAMAAAAJABYAAAABAAMAAAAIABYAAAABAAMAAAAHABYAAAABAAMAAAAGABYAAAABAAMAAAAFABYAAAABAAMAAAAEABYAAAABAAMAAAADABYAAAABAAMAAAA=")
+tile_set = SubResource("TileSet_nv8gj")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1151, 0)
+
+[node name="Back" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(3, 2.69583)
+texture = ExtResource("2_6byak")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1151, 0)
+
+[node name="Back" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(2879, 324)
+scale = Vector2(3, 2.69583)
+texture = ExtResource("2_6byak")
+
+[node name="Samurai" parent="." instance=ExtResource("3_mmskx")]
+position = Vector2(74, 287)
+
+[node name="BordersCollisionBody" type="StaticBody2D" parent="."]
+position = Vector2(-160, 89)
+
+[node name="LeftCollisionWall" type="CollisionShape2D" parent="BordersCollisionBody"]
+position = Vector2(88, 237)
+shape = SubResource("RectangleShape2D_34m4w")
+
+[node name="RightCollisionWall" type="CollisionShape2D" parent="BordersCollisionBody"]
+position = Vector2(4829, 223)
+shape = SubResource("RectangleShape2D_34m4w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(111.75, 344)
+shape = SubResource("RectangleShape2D_683ac")
+
+[node name="DeathWall" type="Area2D" parent="."]
+position = Vector2(-962, 139)
+script = ExtResource("4_px4k6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathWall"]
+position = Vector2(3236, 536)
+shape = SubResource("RectangleShape2D_sq3ka")

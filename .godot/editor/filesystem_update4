@@ -1,4 +1,10 @@
 res://Player/Samurai.tscn
+res://Player/samurai.gd
 res://main.tscn
 res://world.tscn
-res://Player/samurai.gd
+res://BG.tscn
+res://fox.tscn
+res://fox.gd
+res://level_one.tscn
+res://main.gd
+res://area_2d.gd
