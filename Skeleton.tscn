@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dnblenfmb66qn"]
+[gd_scene load_steps=91 format=3 uid="uid://dnblenfmb66qn"]
 
 [ext_resource type="Script" path="res://skeleton.gd" id="1_8ylqo"]
 [ext_resource type="Texture2D" uid="uid://dnraxaruro6fb" path="res://Skeleton/Sprite Sheets/Skeleton Attack.png" id="1_t3t6t"]
@@ -729,6 +729,9 @@ radius = 124.016
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us5hx"]
 size = Vector2(20, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x8wq"]
+size = Vector2(20, 25)
+
 [node name="Skeleton" type="CharacterBody2D"]
 script = ExtResource("1_8ylqo")
 
@@ -739,19 +742,18 @@ shape = SubResource("CapsuleShape2D_mvyex")
 position = Vector2(2, -4)
 scale = Vector2(1.02083, 0.947917)
 sprite_frames = SubResource("SpriteFrames_7u1lq")
-animation = &"Idle"
+animation = &"Hit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_t21ua")
 }
 
-[node name="AxeHit" type="Area2D" parent="."]
+[node name="AxeHitBox" type="Area2D" parent="."]
 position = Vector2(-1, -4.76837e-07)
 scale = Vector2(1.02083, 0.947917)
-monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AxeHit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AxeHitBox"]
 position = Vector2(17.6327, 2.38419e-07)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_j5vg3")
@@ -767,5 +769,12 @@ shape = SubResource("CircleShape2D_77jj0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SkeletonDeath"]
 shape = SubResource("RectangleShape2D_us5hx")
 
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2x8wq")
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
