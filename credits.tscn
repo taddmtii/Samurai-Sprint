@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cove70jgs424i"]
+
+[ext_resource type="PackedScene" uid="uid://jsqbrk2ff6vq" path="res://BG.tscn" id="1_uemm4"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title Screen" parent="." instance=ExtResource("1_uemm4")]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 84.0
+offset_right = 903.0
+offset_bottom = 263.0
+text = "CREDITS:
+
+Skeleton Sprite Pack by Jesse Munguia - https://jesse-m.itch.io/skeleton-pack
+
+Sunnyland Sprite Pack by ansimuz - https://ansimuz.itch.io/sunny-land-pixel-game-art
+
+Dark Samurai Sprite Pack by AimMaga - https://aimmaga.itch.io/darksamurai
+"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 281.0
+offset_right = 555.0
+offset_bottom = 312.0
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="Title Screen" method="_on_back_button_pressed"]

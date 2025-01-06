@@ -18,6 +18,8 @@ func _process(delta):
 		attack() #attack
 
 func _physics_process(delta: float) -> void:
+	if not is_alive:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta #brings player model down
@@ -75,6 +77,12 @@ func update_animation(): #Handles all move and jump animation logic.
 
 func die():
 	is_alive = false
+	velocity = Vector2.ZERO
 	anim.play("Die")
 	await anim.animation_finished
 	get_tree().reload_current_scene()
+
+
+func _on_death_wall_body_entered(body: Node2D) -> void:
+	if body.name == "Samurai": #If we are the ones who fall off....
+		body.die()
