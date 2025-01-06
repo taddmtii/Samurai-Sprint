@@ -1,19 +1,30 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736175735
-area_2d.gd::GDScript::-1::1736103958::0::1::::<>Area2D<>::
-bg.gd::GDScript::-1::1736089182::0::1::::<>ParallaxBackground<>::
-BG.tscn::PackedScene::669832559572203566::1736139362::0::1::::<><>::res://bg.gd<>uid://dmyuqlik6iitp::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png<>uid://evpq8x4wcjrg::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/middle.png
+::res://::1736180317
+bg.gd::GDScript::-1::1736178666::0::1::::<>ParallaxBackground<>::
+BG.tscn::PackedScene::669832559572203566::1736180257::0::1::::<><>::res://bg.gd<>uid://dmyuqlik6iitp::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png<>uid://evpq8x4wcjrg::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/middle.png
 fox.gd::GDScript::-1::1736099895::0::1::::<>Node2D<>::
-fox.tscn::PackedScene::7429260599964672631::1736139362::0::1::::<><>::res://fox.gd<>uid://b0ubw6cv7t0ma::::res://Sunny Land/Assets/Characters/Enemies and NPC/Winter Fox/Sprites/fox-1.png
-level_one.tscn::PackedScene::2772518144332621950::1736139362::0::1::::<><>::uid://xkhjren2lu5t::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/tileset.png<>uid://dmyuqlik6iitp::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png<>uid://bf0c7vakx46c3::::res://Sunny Land/Assets/Environments/SunnyLand/Props/spikes.png<>uid://b7cqw85apxagy::::res://Player/Samurai.tscn<>res://area_2d.gd
-main.gd::GDScript::-1::1736101699::0::1::::<>Node2D<>::
-main.tscn::PackedScene::5236086963164843887::1736139362::0::1::::<><>::res://main.gd<>uid://jsqbrk2ff6vq::::res://BG.tscn
-world.tscn::PackedScene::1867233177773178044::1736139362::0::1::::<><>::uid://b7cqw85apxagy::::res://Player/Samurai.tscn<>uid://jsqbrk2ff6vq::::res://BG.tscn<>uid://dd313pf2lplwx::::res://fox.tscn
+fox.tscn::PackedScene::7429260599964672631::1736180257::0::1::::<><>::res://fox.gd<>uid://b0ubw6cv7t0ma::::res://Sunny Land/Assets/Characters/Enemies and NPC/Winter Fox/Sprites/fox-1.png
+level_one.tscn::PackedScene::2772518144332621950::1736180257::0::1::::<><>::uid://xkhjren2lu5t::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/tileset.png<>uid://dmyuqlik6iitp::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png<>uid://bf0c7vakx46c3::::res://Sunny Land/Assets/Environments/SunnyLand/Props/spikes.png<>uid://b7cqw85apxagy::::res://Player/Samurai.tscn<>uid://evpq8x4wcjrg::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/middle.png
+main.tscn::PackedScene::5236086963164843887::1736180257::0::1::::<><>::res://main.gd<>uid://jsqbrk2ff6vq::::res://BG.tscn
+menu.gd::GDScript::-1::1736177284::0::1::::<>Control<>::
+main.gd::GDScript::-1::1736179864::0::1::::<>Control<>::
+credits.tscn::PackedScene::5799138451814765270::1736180257::0::1::::<><>::uid://jsqbrk2ff6vq::::res://BG.tscn
+world.tscn::PackedScene::1867233177773178044::1736180257::0::1::::<><>::uid://b7cqw85apxagy::::res://Player/Samurai.tscn<>uid://jsqbrk2ff6vq::::res://BG.tscn<>uid://dd313pf2lplwx::::res://fox.tscn
 ::res://DarkSamuraiAssets/::1736047206
 DarkSamurai (64x64).png::CompressedTexture2D::656872650548837843::1736045983::1736047206::1::::<><>::
-::res://Player/::1736139362
-samurai.gd::GDScript::-1::1736139231::0::1::::<>CharacterBody2D<>::
-Samurai.tscn::PackedScene::4637604974604064524::1736139362::0::1::::<><>::res://Player/samurai.gd<>uid://jmgujwfacynj::::res://DarkSamuraiAssets/DarkSamurai (64x64).png
+::res://Player/::1736180257
+samurai.gd::GDScript::-1::1736176503::0::1::::<>CharacterBody2D<>::
+Samurai.tscn::PackedScene::4637604974604064524::1736180257::0::1::::<><>::res://Player/samurai.gd<>uid://jmgujwfacynj::::res://DarkSamuraiAssets/DarkSamurai (64x64).png
+::res://Skeleton/::1736180317
+::res://Skeleton/Files/::1736180317
+::res://Skeleton/GIFS/::1736180317
+::res://Skeleton/Sprite Sheets/::1736180317
+Skeleton Attack.png::CompressedTexture2D::8106852540646240487::1493950873::1736180324::1::::<><>::
+Skeleton Dead.png::CompressedTexture2D::2805402380231888437::1493950903::1736180324::1::::<><>::
+Skeleton Hit.png::CompressedTexture2D::3631266423322987602::1493950942::1736180324::1::::<><>::
+Skeleton Idle.png::CompressedTexture2D::4139614988875632730::1493950952::1736180324::1::::<><>::
+Skeleton React.png::CompressedTexture2D::1142359790081847356::1493950965::1736180324::1::::<><>::
+Skeleton Walk.png::CompressedTexture2D::8966016174247806738::1493950975::1736180324::1::::<><>::
 ::res://Sunny Land/::1736045273
 ::res://Sunny Land/Assets/::1736045272
 ::res://Sunny Land/Assets/Characters/::1736045270
