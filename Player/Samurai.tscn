@@ -657,3 +657,5 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHit"]
 position = Vector2(20.5715, 4.48352)
 shape = SubResource("RectangleShape2D_o184o")
+
+[connection signal="body_entered" from="SwordHit" to="." method="_on_sword_hit_body_entered"]

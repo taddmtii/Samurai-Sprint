@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dnblenfmb66qn"]
+[gd_scene load_steps=88 format=3 uid="uid://dnblenfmb66qn"]
 
 [ext_resource type="Script" path="res://skeleton.gd" id="1_8ylqo"]
 [ext_resource type="Texture2D" uid="uid://dnraxaruro6fb" path="res://Skeleton/Sprite Sheets/Skeleton Attack.png" id="1_t3t6t"]
@@ -723,12 +723,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5vg3"]
 size = Vector2(20, 27.4286)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_77jj0"]
-radius = 124.016
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_us5hx"]
-size = Vector2(20, 30)
-
 [node name="Skeleton" type="CharacterBody2D"]
 script = ExtResource("1_8ylqo")
 
@@ -756,16 +750,3 @@ position = Vector2(17.6327, 2.38419e-07)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_j5vg3")
 disabled = true
-
-[node name="PlayerDetection" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-shape = SubResource("CircleShape2D_77jj0")
-
-[node name="SkeletonDeath" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SkeletonDeath"]
-shape = SubResource("RectangleShape2D_us5hx")
-
-[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
-[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
