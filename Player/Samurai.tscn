@@ -623,7 +623,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o184o"]
-size = Vector2(20, 14.2418)
+size = Vector2(58.9798, 14.2418)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ligpp"]
 size = Vector2(22, 25)
@@ -657,7 +657,8 @@ position = Vector2(-1, -4.76837e-07)
 scale = Vector2(1.02083, 0.947917)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHitBox"]
-position = Vector2(20.5715, 4.48352)
+position = Vector2(1.08162, 4.48352)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_o184o")
 
 [node name="Hurtbox" type="Area2D" parent="."]
