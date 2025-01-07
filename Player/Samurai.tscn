@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b7cqw85apxagy"]
+[gd_scene load_steps=62 format=3 uid="uid://b7cqw85apxagy"]
 
 [ext_resource type="Script" path="res://Player/samurai.gd" id="1_natyk"]
 [ext_resource type="Texture2D" uid="uid://jmgujwfacynj" path="res://DarkSamuraiAssets/DarkSamurai (64x64).png" id="2_3mv1m"]
@@ -628,6 +628,12 @@ size = Vector2(58.9798, 14.2418)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ligpp"]
 size = Vector2(22, 25)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ysmb"]
+bg_color = Color(0.297706, 0.297706, 0.297706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqhey"]
+bg_color = Color(0.959854, 0.377503, 0.417214, 1)
+
 [node name="Samurai" type="CharacterBody2D"]
 script = ExtResource("1_natyk")
 
@@ -666,5 +672,16 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_ligpp")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -28.0
+offset_top = -26.0
+offset_right = 29.0
+offset_bottom = -19.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2ysmb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pqhey")
+value = 80.0
+rounded = true
+show_percentage = false
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

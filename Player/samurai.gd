@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-#random comment
-
 const SPEED = 200.0
 const JUMP_VELOCITY = -350.0
 @export var health = 100
@@ -11,7 +9,7 @@ const JUMP_VELOCITY = -350.0
 var is_hit = false
 @onready var sword_hitbox = $SwordHitBox #area for hitbox
 @onready var hurtbox = $Hurtbox #area for hurtbox
-
+@onready var HealthBar = $HealthBar
 
 
 func _ready() -> void:
@@ -19,6 +17,7 @@ func _ready() -> void:
 	anim.sprite_frames.set_animation_loop("Die", false) #prevents animation loop
 	anim.sprite_frames.set_animation_loop("Hit", false) #prevents animation loop
 	sword_hitbox.monitoring = false #disable hitbox by default
+	HealthBar.value = health
 	#hurtbox.monitoring = false
 	
 func _process(delta):
@@ -73,20 +72,18 @@ func take_damage(): #amount is always 20
 		return
 		
 	health -= 20
-	print("Samurai health: ", health)
+	HealthBar.value = health
 	if health <= 0:
+		HealthBar.value = health
 		die()
 	else:
 		is_hit = true
 		attacking = false
 		anim.stop()
-		print("Playing hit animation...")
 		anim.play("Hit") #play hit animation to signifiy health loss.
-		print("Hit animation started")
 		var promise = anim.animation_finished
 		await promise
 		is_hit = false
-		print("Hit animation finished")
 	
 func update_animation(): #Handles all move and jump animation logic.
 	if is_alive and !is_hit:
