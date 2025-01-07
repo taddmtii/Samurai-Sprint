@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#random comment
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -350.0
