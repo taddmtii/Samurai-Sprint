@@ -1,14 +1,8 @@
 res://main.tscn
-res://world.tscn
 res://Player/Samurai.tscn
 res://BG.tscn
-res://fox.tscn
 res://level_one.tscn
-res://Player/samurai.gd
-res://area_2d.gd
-res://menu.gd
-res://main.gd
 res://credits.tscn
-res://bg.gd
 res://Skeleton.tscn
 res://skeleton.gd
+res://Player/samurai.gd

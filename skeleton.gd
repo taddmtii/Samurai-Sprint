@@ -4,7 +4,7 @@ const SPEED = 50
 var is_alive = true
 var attacking = false
 @onready var axe_hitbox = $AxeHitBox
-@onready var hurtbox = $Hurtbox
+@onready var hurtbox = $EnemyHurtbox
 @export var health = 50
 @export var damage = 20
 var player #this is the samurai
@@ -13,10 +13,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
  
 func _ready():
 	anim.sprite_frames.set_animation_loop("Attack", false) #prevents animation loop
-	anim.sprite_frames.set_animation_loop("Die", false) #prevents animation loop
+	anim.sprite_frames.set_animation_loop("Death", false) #prevents animation loop
 	anim.sprite_frames.set_animation_loop("Hit", false) #prevents animation loop
 	#anim.play("Idle")
-	axe_hitbox.add_to_group("enemy_hitbox") #add hitbox to enemy hitbox.
+	axe_hitbox.monitoring = false
+	#axe_hitbox.add_to_group("enemy_hitbox") #add hitbox to enemy hitbox.
 
 func take_damage():
 	health -= 20
@@ -43,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	update_animation()
 	move_and_slide()
 	
-	if chase and player and position.distance_to(player.position) < 30:
+	if chase and player and is_alive and position.distance_to(player.position) < 30:
 		attack()
 
 func attack():
@@ -69,8 +70,9 @@ func die():
 	chase = false
 	velocity = Vector2.ZERO
 	axe_hitbox.monitoring = false
-	hurtbox.monitorable = false
-	anim.play("Die")
+	#hurtbox.monitorable = false
+	#set_deferred("monitorable", false)
+	anim.play("Death")
 	await anim.animation_finished
 	queue_free()
 

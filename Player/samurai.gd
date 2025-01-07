@@ -17,7 +17,6 @@ func _ready() -> void:
 	anim.sprite_frames.set_animation_loop("Hit", false) #prevents animation loop
 	sword_hitbox.monitoring = false #disable hitbox by default
 	
-	
 func _process(delta):
 	if Input.is_action_just_pressed("Attack"): #checks to see if input is the attack button
 		attack() #attack
@@ -56,15 +55,17 @@ func attack():
 	#var overlapping_objects = $SwordHit.get_overlapping_areas() #checks for everything in collision area, puts into list.
 	#for area in overlapping_objects:
 		#var parent = area.get_parent()
-	attacking = true #we have started to attack.
-	sword_hitbox.monitoring = true # enable hitbox during attack so we can detect collisions
-	anim.play("Attack") 
-	await anim.animation_finished
-	sword_hitbox.monitoring = false # disable hitbox again so it no longer detects collisions
-	attacking = false
+	if not attacking and is_alive:
+		attacking = true #we have started to attack.
+		sword_hitbox.monitoring = true # enable hitbox during attack so we can detect collisions
+		anim.play("Attack") 
+		await anim.animation_finished
+		sword_hitbox.monitoring = false # disable hitbox again so it no longer detects collisions
+		attacking = false
 	
 func take_damage(): #amount is always 20
 	health -= 20
+	print("Samurai health: ", health)
 	if health <= 0:
 		die()
 	else:
@@ -97,9 +98,7 @@ func _on_death_wall_body_entered(body: Node2D) -> void:
 	if body.name == "Skeleton": #skeleton ceases to exist.
 		body.queue_free()
 
-
 func _on_hurtbox_area_entered(area: Area2D) -> void: #when our hurtbox is entered by skeletons axe hitbox.
-	if area.is_in_group("enemy_hitbox") and area.monitoring:
-		print("Samurai took damage")
+	if area.name == "AxeHitBox" and area.monitoring:
+		print("Taking damage from axe")
 		take_damage()
-		#print("Skeletons Axe hit Samurai! Samurais health: " + health)
