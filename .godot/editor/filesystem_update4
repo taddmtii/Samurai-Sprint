@@ -1,8 +1,7 @@
-res://Player/Samurai.tscn
-res://main.tscn
-res://BG.tscn
 res://level_one.tscn
+res://main.tscn
+res://Player/Samurai.tscn
+res://BG.tscn
 res://credits.tscn
 res://Skeleton.tscn
-res://skeleton.gd
 res://Player/samurai.gd
