@@ -211,6 +211,6 @@ position = Vector2(38, 301)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Skeleton" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(265, 298)
+position = Vector2(231, 297)
 
 [connection signal="body_entered" from="StaticBody2D2/DeathWall" to="Player/Samurai" method="_on_death_wall_body_entered"]

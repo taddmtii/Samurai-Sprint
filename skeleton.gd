@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	update_animation()
 	move_and_slide()
 	
-	if chase and player and is_alive and position.distance_to(player.position) < 30:
+	if chase and player and is_alive and position.distance_to(player.position) < 30 and not player.is_hit:
 		attack()
 
 func attack():
@@ -52,7 +52,6 @@ func attack():
 		attacking = true
 		anim.play("Attack")
 		axe_hitbox.monitoring = true
-		print("Skeleton attack started, axe_hitbox monitoring:", axe_hitbox.monitoring)
 		await anim.animation_finished
 		axe_hitbox.monitoring = false
 		attacking = false

@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 @export var health = 100
 @onready var anim = get_node("AnimatedSprite2D")
 @export var is_alive = true
 @export var attacking = false
+var is_hit = false
 @onready var sword_hitbox = $SwordHitBox #area for hitbox
 @onready var hurtbox = $Hurtbox #area for hurtbox
 
@@ -67,16 +68,27 @@ func attack():
 		attacking = false
 	
 func take_damage(): #amount is always 20
+	if is_hit:
+		return
+		
 	health -= 20
 	print("Samurai health: ", health)
 	if health <= 0:
 		die()
 	else:
+		is_hit = true
+		attacking = false
+		anim.stop()
+		print("Playing hit animation...")
 		anim.play("Hit") #play hit animation to signifiy health loss.
-		await anim.animation_finished
+		print("Hit animation started")
+		var promise = anim.animation_finished
+		await promise
+		is_hit = false
+		print("Hit animation finished")
 	
 func update_animation(): #Handles all move and jump animation logic.
-	if is_alive:
+	if is_alive and !is_hit:
 		if !attacking: #as long as we are not attacking
 			if velocity.x != 0: #if we are not idle
 				anim.play("Run")
@@ -102,5 +114,4 @@ func _on_death_wall_body_entered(body: Node2D) -> void:
 
 func _on_hurtbox_area_entered(area: Area2D) -> void: #when our hurtbox is entered by skeletons axe hitbox.
 	if area.name == "AxeHitBox" and area.monitoring: #if area that entered hurtbox was the axe AND the axe is monitoring
-		print("AxeHitBox entered Samurai's Hurtbox!")
 		take_damage()
