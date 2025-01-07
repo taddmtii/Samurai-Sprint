@@ -11,11 +11,13 @@ const JUMP_VELOCITY = -400.0
 @onready var hurtbox = $Hurtbox #area for hurtbox
 
 
+
 func _ready() -> void:
 	anim.sprite_frames.set_animation_loop("Attack", false) #prevents animation loop
 	anim.sprite_frames.set_animation_loop("Die", false) #prevents animation loop
 	anim.sprite_frames.set_animation_loop("Hit", false) #prevents animation loop
 	sword_hitbox.monitoring = false #disable hitbox by default
+	#hurtbox.monitoring = false
 	
 func _process(delta):
 	if Input.is_action_just_pressed("Attack"): #checks to see if input is the attack button
@@ -52,15 +54,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide() #allows movement
 
 func attack():
-	#var overlapping_objects = $SwordHit.get_overlapping_areas() #checks for everything in collision area, puts into list.
+	#var overlapping_objects = $SwordHitBox.get_overlapping_areas() #checks for everything in collision area, puts into list.
 	#for area in overlapping_objects:
 		#var parent = area.get_parent()
+		#print(parent.name)
 	if not attacking and is_alive:
 		attacking = true #we have started to attack.
-		sword_hitbox.monitoring = true # enable hitbox during attack so we can detect collisions
+		sword_hitbox.monitoring = true # enable hitbox during attack so we can detect collisions / SWORD ACTIVE
 		anim.play("Attack") 
 		await anim.animation_finished
-		sword_hitbox.monitoring = false # disable hitbox again so it no longer detects collisions
+		sword_hitbox.monitoring = false # disable hitbox again so it no longer detects collisions / SWORD INACTIVE
 		attacking = false
 	
 func take_damage(): #amount is always 20
@@ -91,7 +94,6 @@ func die():
 	await anim.animation_finished
 	get_tree().reload_current_scene()
 
-
 func _on_death_wall_body_entered(body: Node2D) -> void:
 	if body.name == "Samurai": #If we are the ones who fall off....
 		body.die()
@@ -99,6 +101,6 @@ func _on_death_wall_body_entered(body: Node2D) -> void:
 		body.queue_free()
 
 func _on_hurtbox_area_entered(area: Area2D) -> void: #when our hurtbox is entered by skeletons axe hitbox.
-	if area.name == "AxeHitBox" and area.monitoring:
-		print("Taking damage from axe")
+	if area.name == "AxeHitBox" and area.monitoring: #if area that entered hurtbox was the axe AND the axe is monitoring
+		print("AxeHitBox entered Samurai's Hurtbox!")
 		take_damage()

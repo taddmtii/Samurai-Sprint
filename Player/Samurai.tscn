@@ -658,14 +658,13 @@ scale = Vector2(1.02083, 0.947917)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHitBox"]
 position = Vector2(1.08162, 4.48352)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_o184o")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_ligpp")
 
-[connection signal="body_entered" from="SwordHitBox" to="." method="_on_sword_hit_body_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

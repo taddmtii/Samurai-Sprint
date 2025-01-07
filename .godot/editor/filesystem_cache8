@@ -1,19 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736224488
+::res://::1736259204
 bg.gd::GDScript::-1::1736178666::0::1::::<>ParallaxBackground<>::
-BG.tscn::PackedScene::669832559572203566::1736198471::0::1::::<><>::res://bg.gd<>uid://dmyuqlik6iitp::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png<>uid://evpq8x4wcjrg::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/middle.png
-credits.tscn::PackedScene::5799138451814765270::1736198471::0::1::::<><>::uid://jsqbrk2ff6vq::::res://BG.tscn
-level_one.tscn::PackedScene::2772518144332621950::1736198471::0::1::::<><>::uid://xkhjren2lu5t::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/tileset.png<>uid://dmyuqlik6iitp::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png<>uid://bf0c7vakx46c3::::res://Sunny Land/Assets/Environments/SunnyLand/Props/spikes.png<>uid://b7cqw85apxagy::::res://Player/Samurai.tscn<>uid://evpq8x4wcjrg::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/middle.png<>uid://dnblenfmb66qn::::res://Skeleton.tscn
+BG.tscn::PackedScene::669832559572203566::1736227835::0::1::::<><>::res://bg.gd<>uid://dmyuqlik6iitp::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png<>uid://evpq8x4wcjrg::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/middle.png
+credits.tscn::PackedScene::5799138451814765270::1736227835::0::1::::<><>::uid://jsqbrk2ff6vq::::res://BG.tscn
+level_one.tscn::PackedScene::2772518144332621950::1736227835::0::1::::<><>::uid://xkhjren2lu5t::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/tileset.png<>uid://dmyuqlik6iitp::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png<>uid://bf0c7vakx46c3::::res://Sunny Land/Assets/Environments/SunnyLand/Props/spikes.png<>uid://b7cqw85apxagy::::res://Player/Samurai.tscn<>uid://evpq8x4wcjrg::::res://Sunny Land/Assets/Environments/SunnyLand/Layers/middle.png<>uid://dnblenfmb66qn::::res://Skeleton.tscn
 main.gd::GDScript::-1::1736179864::0::1::::<>Control<>::
-main.tscn::PackedScene::5236086963164843887::1736198471::0::1::::<><>::res://main.gd<>uid://jsqbrk2ff6vq::::res://BG.tscn
+main.tscn::PackedScene::5236086963164843887::1736227835::0::1::::<><>::res://main.gd<>uid://jsqbrk2ff6vq::::res://BG.tscn
 menu.gd::GDScript::-1::1736177284::0::1::::<>Control<>::
-skeleton.gd::GDScript::-1::1736198422::0::1::::<>CharacterBody2D<>::
-Skeleton.tscn::PackedScene::8074457117299224817::1736198471::0::1::::<><>::res://skeleton.gd<>uid://dnraxaruro6fb::::res://Skeleton/Sprite Sheets/Skeleton Attack.png<>uid://bf77tj3i3ku0d::::res://Skeleton/Sprite Sheets/Skeleton Dead.png<>uid://br0aose12gm5g::::res://Skeleton/Sprite Sheets/Skeleton Hit.png<>uid://by8i4bkbcxbr3::::res://Skeleton/Sprite Sheets/Skeleton Idle.png<>uid://qjmq7wqiofbw::::res://Skeleton/Sprite Sheets/Skeleton React.png<>uid://d00g8g066pl75::::res://Skeleton/Sprite Sheets/Skeleton Walk.png
+skeleton.gd::GDScript::-1::1736227921::0::1::::<>CharacterBody2D<>::
+Skeleton.tscn::PackedScene::8074457117299224817::1736227921::0::1::::<><>::res://skeleton.gd<>uid://dnraxaruro6fb::::res://Skeleton/Sprite Sheets/Skeleton Attack.png<>uid://bf77tj3i3ku0d::::res://Skeleton/Sprite Sheets/Skeleton Dead.png<>uid://br0aose12gm5g::::res://Skeleton/Sprite Sheets/Skeleton Hit.png<>uid://by8i4bkbcxbr3::::res://Skeleton/Sprite Sheets/Skeleton Idle.png<>uid://qjmq7wqiofbw::::res://Skeleton/Sprite Sheets/Skeleton React.png<>uid://d00g8g066pl75::::res://Skeleton/Sprite Sheets/Skeleton Walk.png
 ::res://DarkSamuraiAssets/::1736047206
 DarkSamurai (64x64).png::CompressedTexture2D::656872650548837843::1736045983::1736047206::1::::<><>::
-::res://Player/::1736198471
-samurai.gd::GDScript::-1::1736198304::0::1::::<>CharacterBody2D<>::
-Samurai.tscn::PackedScene::4637604974604064524::1736198471::0::1::::<><>::res://Player/samurai.gd<>uid://jmgujwfacynj::::res://DarkSamuraiAssets/DarkSamurai (64x64).png
+::res://Player/::1736227835
+samurai.gd::GDScript::-1::1736227784::0::1::::<>CharacterBody2D<>::
+Samurai.tscn::PackedScene::4637604974604064524::1736227835::0::1::::<><>::res://Player/samurai.gd<>uid://jmgujwfacynj::::res://DarkSamuraiAssets/DarkSamurai (64x64).png
 ::res://Skeleton/::1736180362
 ::res://Skeleton/Sprite Sheets/::1736180324
 Skeleton Attack.png::CompressedTexture2D::8106852540646240487::1493950873::1736180324::1::::<><>::

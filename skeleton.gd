@@ -52,6 +52,7 @@ func attack():
 		attacking = true
 		anim.play("Attack")
 		axe_hitbox.monitoring = true
+		print("Skeleton attack started, axe_hitbox monitoring:", axe_hitbox.monitoring)
 		await anim.animation_finished
 		axe_hitbox.monitoring = false
 		attacking = false
@@ -90,6 +91,6 @@ func _on_player_detection_body_exited(body: Node2D) -> void: #if player exits de
 		chase = false #player not detected anymore, stop chase.
 
 #Logic for hurtbox
-func _on_hurtbox_area_entered(area: Area2D) -> void:
+func _on_enemy_hurtbox_area_entered(area: Area2D) -> void:
 	if area.name == "SwordHitBox" and area.monitoring:
 		take_damage()
