@@ -5,6 +5,7 @@ var is_alive = true
 var attacking = false
 @onready var axe_hitbox = $AxeHitBox
 @onready var hurtbox = $EnemyHurtbox
+@onready var SkeletonHealthBar = $HealthBar
 @export var health = 50
 @export var damage = 20
 var player #this is the samurai
@@ -17,11 +18,12 @@ func _ready():
 	anim.sprite_frames.set_animation_loop("Hit", false) #prevents animation loop
 	#anim.play("Idle")
 	axe_hitbox.monitoring = false
+	SkeletonHealthBar.value = health
 	#axe_hitbox.add_to_group("enemy_hitbox") #add hitbox to enemy hitbox.
 
 func take_damage():
 	health -= 20
-	print("Skeleton health: ", health)
+	SkeletonHealthBar.value = health
 	if health <= 0:
 		die()
 	else:

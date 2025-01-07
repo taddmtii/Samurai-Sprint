@@ -46,10 +46,8 @@ func _physics_process(delta: float) -> void:
 		get_node("AnimatedSprite2D").flip_h = false
 	if direction:
 		velocity.x = direction * SPEED
-		#anim.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		#anim.play("Idle")
 
 	update_animation() #update animation every frame.
 	move_and_slide() #allows movement

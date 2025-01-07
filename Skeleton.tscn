@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://dnblenfmb66qn"]
+[gd_scene load_steps=93 format=3 uid="uid://dnblenfmb66qn"]
 
 [ext_resource type="Script" path="res://skeleton.gd" id="1_8ylqo"]
 [ext_resource type="Texture2D" uid="uid://dnraxaruro6fb" path="res://Skeleton/Sprite Sheets/Skeleton Attack.png" id="1_t3t6t"]
@@ -732,6 +732,12 @@ size = Vector2(31, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5vg3"]
 size = Vector2(52.8981, 27.4286)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0r3ur"]
+bg_color = Color(0.297706, 0.297706, 0.297706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dxpn"]
+bg_color = Color(0.959854, 0.377503, 0.417214, 1)
+
 [node name="Skeleton" type="CharacterBody2D"]
 script = ExtResource("1_8ylqo")
 
@@ -772,6 +778,18 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AxeHitBox"]
 position = Vector2(0.979596, 5.03036e-07)
 shape = SubResource("RectangleShape2D_j5vg3")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -28.0
+offset_top = -26.0
+offset_right = 29.0
+offset_bottom = -19.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0r3ur")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8dxpn")
+max_value = 50.0
+value = 50.0
+rounded = true
+show_percentage = false
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
