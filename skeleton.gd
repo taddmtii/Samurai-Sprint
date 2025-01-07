@@ -70,7 +70,11 @@ func die():
 	chase = false
 	velocity = Vector2.ZERO
 	axe_hitbox.monitoring = false
+<<<<<<< HEAD
 	#hurtbox.monitorable = false
+=======
+	hurtbox.monitorable = false
+>>>>>>> a08178692c38c6e72ae38a794f2c85e6be7bf75f
 	#set_deferred("monitorable", false)
 	anim.play("Death")
 	await anim.animation_finished
