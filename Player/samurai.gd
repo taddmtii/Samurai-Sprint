@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
+@export var SPEED = 200.0
 const JUMP_VELOCITY = -350.0
 @export var health = 100
 @onready var anim = get_node("AnimatedSprite2D")
@@ -93,7 +93,7 @@ func update_animation(): #Handles all move and jump animation logic.
 			if velocity.y < 0:
 				anim.play("Jump")
 			if velocity.y > 0 and is_alive:
-				anim.play("Fall")
+				anim.play("Fall")		
 
 func die():
 	is_alive = false
@@ -105,7 +105,7 @@ func die():
 func _on_death_wall_body_entered(body: Node2D) -> void:
 	if body.name == "Samurai": #If we are the ones who fall off....
 		body.die()
-	if body.name == "Skeleton": #skeleton ceases to exist.
+	if body.name == "Skeleton": #skeleton ceases to exist, should not happen regardless.
 		body.queue_free()
 
 func _on_hurtbox_area_entered(area: Area2D) -> void: #when our hurtbox is entered by skeletons axe hitbox.

@@ -1,7 +1,9 @@
-ProgressBar
-CollisionShape2D
 Area2D
+Timer
+CollisionShape2D
+Sprite2D
 Node2D
+ProgressBar
 CharacterBody2D
 Button
 Label
@@ -10,5 +12,3 @@ VBoxContainer
 Container
 LineEdit
 MarginContainer
-Control
-StaticBody2D

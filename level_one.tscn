@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bfra765op7anu"]
+[gd_scene load_steps=17 format=4 uid="uid://bfra765op7anu"]
 
 [ext_resource type="Texture2D" uid="uid://xkhjren2lu5t" path="res://Sunny Land/Assets/Environments/SunnyLand/Layers/tileset.png" id="1_s5r0o"]
 [ext_resource type="Texture2D" uid="uid://dmyuqlik6iitp" path="res://Sunny Land/Assets/Environments/SunnyLand/Layers/back.png" id="2_6byak"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dnblenfmb66qn" path="res://Skeleton.tscn" id="6_6bolc"]
 [ext_resource type="Texture2D" uid="uid://djdkl13xamuo5" path="res://Sunny Land/Assets/Environments/SunnyLand/Props/house.png" id="6_nnbq1"]
 [ext_resource type="Texture2D" uid="uid://lp38wvo1f7yb" path="res://Sunny Land/Assets/Environments/SunnyLand/Props/palm.png" id="7_buytk"]
+[ext_resource type="PackedScene" uid="uid://1b8jrh1a8roi" path="res://acorn.tscn" id="8_bkmx6"]
+[ext_resource type="PackedScene" uid="uid://n4nvo6qhaf6r" path="res://cherry.tscn" id="9_8ntd4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u8rxo"]
 texture = ExtResource("1_s5r0o")
@@ -169,22 +171,22 @@ tile_set = SubResource("TileSet_nv8gj")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1151, 0)
 
-[node name="Back2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="SkyBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(576, 324)
 scale = Vector2(3, 2.69583)
 texture = ExtResource("2_6byak")
 
-[node name="House" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Back2"]
+[node name="House" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/SkyBackground"]
 position = Vector2(-156.667, -21.5147)
 scale = Vector2(0.333333, 0.370943)
 texture = ExtResource("6_nnbq1")
 
-[node name="House2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Back2"]
+[node name="House2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/SkyBackground"]
 position = Vector2(-120, -21.5147)
 scale = Vector2(0.333333, 0.370943)
 texture = ExtResource("6_nnbq1")
 
-[node name="Palm" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Back2"]
+[node name="Palm" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/SkyBackground"]
 position = Vector2(-84.3333, -28.1917)
 scale = Vector2(0.333333, 0.305607)
 texture = ExtResource("7_buytk")
@@ -239,12 +241,20 @@ position = Vector2(38, 301)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Skeleton" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(256, 125)
+position = Vector2(364, 298)
 
 [node name="Skeleton2" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(366, 125)
+position = Vector2(837, 300)
 
 [node name="Skeleton3" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(479, 141)
+position = Vector2(672, 303)
+
+[node name="Powerups" type="Node2D" parent="."]
+
+[node name="Acorn" parent="Powerups" instance=ExtResource("8_bkmx6")]
+position = Vector2(225, 306)
+
+[node name="Cherry" parent="Powerups" instance=ExtResource("9_8ntd4")]
+position = Vector2(148, 311)
 
 [connection signal="body_entered" from="StaticBody2D2/DeathWall" to="Player/Samurai" method="_on_death_wall_body_entered"]

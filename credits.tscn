@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cove70jgs424i"]
+[gd_scene load_steps=3 format=3 uid="uid://cove70jgs424i"]
 
 [ext_resource type="PackedScene" uid="uid://jsqbrk2ff6vq" path="res://BG.tscn" id="1_uemm4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wc00s"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -18,6 +21,7 @@ offset_left = 242.0
 offset_top = 84.0
 offset_right = 903.0
 offset_bottom = 263.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wc00s")
 text = "CREDITS:
 
 Skeleton Sprite Pack by Jesse Munguia - https://jesse-m.itch.io/skeleton-pack

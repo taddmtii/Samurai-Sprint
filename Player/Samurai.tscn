@@ -637,7 +637,7 @@ bg_color = Color(0.959854, 0.377503, 0.417214, 1)
 [node name="Samurai" type="CharacterBody2D"]
 script = ExtResource("1_natyk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionArea" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_owtex")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
