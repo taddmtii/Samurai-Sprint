@@ -2,7 +2,7 @@ extends Sprite2D
 
 var player
 
-#Acorn: Speed 2x
+#Acorn: All health back
 func _ready():
 	player = get_node("../../Player/Samurai") 
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4l4wqql1c7wh"]
+
+[ext_resource type="Texture2D" uid="uid://bdko1jj1sxile" path="res://Sunny Land/Assets/Props Items and VFX/fireball/Sprites/fireball-2.png" id="1_xd6i2"]
+[ext_resource type="Script" path="res://fireball.gd" id="2_ia8ds"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mt67f"]
+radius = 11.0
+
+[node name="Fireball" type="Sprite2D"]
+texture = ExtResource("1_xd6i2")
+script = ExtResource("2_ia8ds")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 10.0
+one_shot = true
+
+[node name="FireballHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireballHitbox"]
+shape = SubResource("CircleShape2D_mt67f")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="FireballHitbox" to="." method="_on_fireball_hitbox_body_entered"]

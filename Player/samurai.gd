@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
 @export var SPEED = 200.0
-const JUMP_VELOCITY = -350.0
+@export var JUMP_VELOCITY = -350.0
 @export var health = 100
 @onready var anim = get_node("AnimatedSprite2D")
 @export var is_alive = true
 @export var attacking = false
+@export var gem_count = 0
 var is_hit = false
 @onready var sword_hitbox = $SwordHitBox #area for hitbox
 @onready var hurtbox = $Hurtbox #area for hurtbox
