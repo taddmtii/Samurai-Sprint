@@ -243,7 +243,7 @@ position = Vector2(38, 301)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Skeleton" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(364, 298)
+position = Vector2(270, 303)
 
 [node name="Skeleton2" parent="Mobs" instance=ExtResource("6_6bolc")]
 position = Vector2(837, 300)
@@ -254,16 +254,18 @@ position = Vector2(672, 303)
 [node name="Powerups" type="Node2D" parent="."]
 
 [node name="Acorn" parent="Powerups" instance=ExtResource("8_bkmx6")]
-position = Vector2(225, 306)
+position = Vector2(338, 310)
 
 [node name="Cherry" parent="Powerups" instance=ExtResource("9_8ntd4")]
-position = Vector2(181, 307)
+position = Vector2(170.75, 309.75)
+scale = Vector2(0.97619, 0.928571)
 
 [node name="Cherry2" parent="Powerups" instance=ExtResource("9_8ntd4")]
 position = Vector2(655, 310)
 
 [node name="Fireball" parent="Powerups" instance=ExtResource("10_7tivf")]
-position = Vector2(204, 306)
+position = Vector2(526, 312)
+scale = Vector2(0.810345, 0.833333)
 
 [node name="Gems" type="Node2D" parent="."]
 
@@ -272,11 +274,11 @@ position = Vector2(88, 312)
 scale = Vector2(0.833333, 0.9633)
 
 [node name="Gem2" parent="Gems" instance=ExtResource("11_ve1da")]
-position = Vector2(110, 313)
+position = Vector2(566, 312)
 scale = Vector2(0.833333, 0.9633)
 
 [node name="Gem3" parent="Gems" instance=ExtResource("11_ve1da")]
-position = Vector2(135, 312)
+position = Vector2(593, 280)
 scale = Vector2(0.833333, 0.9633)
 
 [connection signal="body_entered" from="StaticBody2D2/DeathWall" to="Player/Samurai" method="_on_death_wall_body_entered"]

@@ -3,9 +3,11 @@ extends CharacterBody2D
 const SPEED = 50
 var is_alive = true
 var attacking = false
+#var cooldown_timer_active = false
 @onready var axe_hitbox = $AxeHitBox
 @onready var hurtbox = $EnemyHurtbox
 @onready var SkeletonHealthBar = $HealthBar
+@onready var timer = $AttackCooldown
 @export var health = 50
 @export var damage = 20
 var player #this is the samurai
@@ -46,13 +48,16 @@ func _physics_process(delta: float) -> void:
 	update_animation()
 	move_and_slide()
 	
-	if chase and player and is_alive and position.distance_to(player.position) < 30 and not player.is_hit:
+	if chase and player and is_alive and position.distance_to(player.position) < 30 and not player.is_hit and not player.immune:
 		attack()
 
 func attack():
 	if not attacking and is_alive:
+		timer.start()
 		attacking = true
 		anim.play("Attack")
+		#cooldown_timer_active = true
+		print("Skeleton attack cooldown timer started")
 		axe_hitbox.monitoring = true
 		await anim.animation_finished
 		axe_hitbox.monitoring = false
@@ -95,3 +100,9 @@ func _on_player_detection_body_exited(body: Node2D) -> void: #if player exits de
 func _on_enemy_hurtbox_area_entered(area: Area2D) -> void:
 	if area.name == "SwordHitBox" and area.monitoring:
 		take_damage()
+
+func _on_attack_cooldown_timeout() -> void:
+	#cooldown_timer_active = false
+	player.immune = false
+	#timer.stop()
+	

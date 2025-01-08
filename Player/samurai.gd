@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var attacking = false
 @export var gem_count = 0
 var is_hit = false
+@export var immune = false
 @onready var sword_hitbox = $SwordHitBox #area for hitbox
 @onready var hurtbox = $Hurtbox #area for hurtbox
 @onready var HealthBar = $HealthBar
@@ -15,6 +16,7 @@ var is_hit = false
 #Flags for Powerups
 @export var cherry_active = false
 @export var acorn_active = false
+@export var fireball_active = false
 
 func _ready() -> void:
 	anim.sprite_frames.set_animation_loop("Attack", false) #prevents animation loop
@@ -72,7 +74,6 @@ func attack():
 func take_damage(): #amount is always 20
 	if is_hit:
 		return
-		
 	health -= 20
 	HealthBar.value = health
 	if health <= 0:
@@ -86,7 +87,8 @@ func take_damage(): #amount is always 20
 		var promise = anim.animation_finished
 		await promise
 		is_hit = false
-	
+		immune = true
+		
 func update_animation(): #Handles all move and jump animation logic.
 	if is_alive and !is_hit:
 		if !attacking: #as long as we are not attacking
@@ -113,5 +115,5 @@ func _on_death_wall_body_entered(body: Node2D) -> void:
 		body.queue_free()
 
 func _on_hurtbox_area_entered(area: Area2D) -> void: #when our hurtbox is entered by skeletons axe hitbox.
-	if area.name == "AxeHitBox" and area.monitoring: #if area that entered hurtbox was the axe AND the axe is monitoring
+	if area.name == "AxeHitBox" and area.monitoring and not immune: #if area that entered hurtbox was the axe AND the axe is monitoring
 		take_damage()
