@@ -1,12 +1,12 @@
+Label
+ProgressBar
 Area2D
 Timer
 CollisionShape2D
 Sprite2D
 Node2D
-ProgressBar
 CharacterBody2D
 Button
-Label
 RichTextLabel
 VBoxContainer
 Container

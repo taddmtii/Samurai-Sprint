@@ -11,6 +11,9 @@ var is_hit = false
 @onready var hurtbox = $Hurtbox #area for hurtbox
 @onready var HealthBar = $HealthBar
 
+#Flags for Powerups
+@export var cherry_active = false
+@export var acorn_active = false
 
 func _ready() -> void:
 	anim.sprite_frames.set_animation_loop("Attack", false) #prevents animation loop
