@@ -13,7 +13,7 @@ var attacking = false
 var player #this is the samurai
 var chase = false #active chase flag.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
- 
+
 func _ready():
 	anim.sprite_frames.set_animation_loop("Attack", false) #prevents animation loop
 	anim.sprite_frames.set_animation_loop("Death", false) #prevents animation loop
@@ -45,23 +45,26 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED #horizontal velocity towards player.
 	else: #stop chasing, so skeleton shoudl stop moving
 		velocity.x = 0 #stop movement
-	update_animation()
-	move_and_slide()
 	
 	if chase and player and is_alive and position.distance_to(player.position) < 30 and not player.is_hit and not player.immune:
 		attack()
-
+	
+	update_animation()
+	move_and_slide()
+	
 func attack():
 	if not attacking and is_alive:
-		timer.start()
+		#can_attack = false
 		attacking = true
 		anim.play("Attack")
 		#cooldown_timer_active = true
 		print("Skeleton attack cooldown timer started")
+		await get_tree().create_timer(0.3).timeout
 		axe_hitbox.monitoring = true
 		await anim.animation_finished
 		axe_hitbox.monitoring = false
 		attacking = false
+		timer.start()
 
 func update_animation(): #Handles all move and jump animation logic.
 	if is_alive:
@@ -103,6 +106,7 @@ func _on_enemy_hurtbox_area_entered(area: Area2D) -> void:
 
 func _on_attack_cooldown_timeout() -> void:
 	#cooldown_timer_active = false
+	#can_attack = true
 	player.immune = false
 	#timer.stop()
 	

@@ -72,7 +72,7 @@ func attack():
 		attacking = false
 	
 func take_damage(): #amount is always 20
-	if is_hit:
+	if is_hit or immune:
 		return
 	health -= 20
 	HealthBar.value = health
@@ -81,13 +81,14 @@ func take_damage(): #amount is always 20
 		die()
 	else:
 		is_hit = true
+		immune = true
 		attacking = false
 		anim.stop()
 		anim.play("Hit") #play hit animation to signifiy health loss.
 		var promise = anim.animation_finished
 		await promise
 		is_hit = false
-		immune = true
+		#immune = true
 		
 func update_animation(): #Handles all move and jump animation logic.
 	if is_alive and !is_hit:

@@ -1,7 +1,5 @@
-res://Player/Samurai.tscn
-res://Player/samurai.gd
-res://skeleton.gd
 res://main.tscn
+res://Player/Samurai.tscn
 res://BG.tscn
 res://level_one.tscn
 res://credits.tscn
@@ -10,3 +8,5 @@ res://acorn.tscn
 res://cherry.tscn
 res://fireball.tscn
 res://gem.tscn
+res://skeleton.gd
+res://Player/samurai.gd
