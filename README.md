@@ -10,7 +10,9 @@ Explore different powerups that increase your speed, jump height, and bring you 
 
 ![image](https://github.com/user-attachments/assets/b3432a23-c114-4fe9-93f1-9150c17c1724)
 
+![image](https://github.com/user-attachments/assets/bca27874-33fa-4a2e-a3ca-c7b28cd6a3d6)
 
+![image](https://github.com/user-attachments/assets/09cef40b-b292-4de0-b582-958883672ac3)
 
 
 This is a work in progress currently, check commit history for current progress.
