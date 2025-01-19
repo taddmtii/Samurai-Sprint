@@ -1,7 +1,10 @@
-[gd_scene load_steps=62 format=3 uid="uid://b7cqw85apxagy"]
+[gd_scene load_steps=68 format=3 uid="uid://b7cqw85apxagy"]
 
 [ext_resource type="Script" path="res://Player/samurai.gd" id="1_natyk"]
 [ext_resource type="Texture2D" uid="uid://jmgujwfacynj" path="res://DarkSamuraiAssets/DarkSamurai (64x64).png" id="2_3mv1m"]
+[ext_resource type="Script" path="res://hud.gd" id="3_id3aw"]
+[ext_resource type="FontFile" uid="uid://cw76c467akfgt" path="res://Minecraft.ttf" id="5_2k3a4"]
+[ext_resource type="Texture2D" uid="uid://bqh3a8q1y0d56" path="res://UI_Pack/01_Flat_Theme/Sprites/UI_Flat_InputField01a.png" id="6_4ff7f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owtex"]
 
@@ -622,6 +625,15 @@ _data = {
 "Run": SubResource("Animation_tcgir")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_sqvo8"]
+font = ExtResource("5_2k3a4")
+
+[sub_resource type="LabelSettings" id="LabelSettings_b4vua"]
+font = ExtResource("5_2k3a4")
+
+[sub_resource type="LabelSettings" id="LabelSettings_qvodu"]
+font = ExtResource("5_2k3a4")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o184o"]
 size = Vector2(58.9798, 14.2418)
 
@@ -657,6 +669,60 @@ offset = Vector2(0, -30)
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
+
+[node name="HUD" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 99.0
+offset_top = 165.0
+offset_right = 231.0
+offset_bottom = 246.0
+script = ExtResource("3_id3aw")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/HUD"]
+layout_mode = 0
+offset_left = -173.0
+offset_top = -100.0
+offset_right = -14.0
+offset_bottom = -39.0
+texture = ExtResource("6_4ff7f")
+
+[node name="Panel" type="Panel" parent="Camera2D/HUD"]
+layout_mode = 0
+offset_left = -173.0
+offset_top = -99.0
+offset_right = -13.0
+offset_bottom = -40.0
+
+[node name="Health" type="Label" parent="Camera2D/HUD/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.065
+anchor_top = -0.138
+offset_left = 14.4
+offset_top = 14.142
+offset_right = 140.625
+offset_bottom = 27.068
+text = "Health: "
+label_settings = SubResource("LabelSettings_sqvo8")
+
+[node name="Gems" type="Label" parent="Camera2D/HUD/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 24.0
+offset_right = 139.0
+offset_bottom = 47.0
+text = "Gems: "
+label_settings = SubResource("LabelSettings_b4vua")
+
+[node name="SkeletonsKilled" type="Label" parent="Camera2D/HUD/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 40.0
+offset_right = 138.0
+offset_bottom = 65.0
+text = "Killed: "
+label_settings = SubResource("LabelSettings_qvodu")
 
 [node name="SwordHitBox" type="Area2D" parent="."]
 position = Vector2(-1, -4.76837e-07)

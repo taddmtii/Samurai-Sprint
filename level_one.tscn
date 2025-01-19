@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bfra765op7anu"]
+[gd_scene load_steps=44 format=4 uid="uid://bfra765op7anu"]
 
 [ext_resource type="Texture2D" uid="uid://xkhjren2lu5t" path="res://Sunny Land/Assets/Environments/SunnyLand/Layers/tileset.png" id="1_s5r0o"]
 [ext_resource type="Script" path="res://level_one.gd" id="1_to8p2"]
@@ -216,6 +216,9 @@ size = Vector2(160, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7l7y0"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcabs"]
+size = Vector2(48, 16)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_0c22r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sq3ka"]
@@ -427,6 +430,18 @@ shape = SubResource("RectangleShape2D_3ue06")
 position = Vector2(3184, 352)
 shape = SubResource("RectangleShape2D_7l7y0")
 
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1176, 280)
+shape = SubResource("RectangleShape2D_gcabs")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1240, 248)
+shape = SubResource("RectangleShape2D_gcabs")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1304, 216)
+shape = SubResource("RectangleShape2D_gcabs")
+
 [node name="FinishSign" type="Area2D" parent="."]
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="FinishSign"]
@@ -453,13 +468,13 @@ position = Vector2(38, 301)
 position = Vector2(812, 295)
 
 [node name="Skeleton2" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(688, 307)
+position = Vector2(682, 278)
 
 [node name="Skeleton3" parent="Mobs" instance=ExtResource("6_6bolc")]
 position = Vector2(223, 287)
 
 [node name="Skeleton4" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(1105, 303)
+position = Vector2(978, 300)
 
 [node name="Skeleton5" parent="Mobs" instance=ExtResource("6_6bolc")]
 position = Vector2(1523, 304)
@@ -520,7 +535,7 @@ position = Vector2(955, 268)
 scale = Vector2(0.833333, 0.9633)
 
 [node name="Gem3" parent="Gems" instance=ExtResource("11_ve1da")]
-position = Vector2(677, 313)
+position = Vector2(675, 313)
 scale = Vector2(0.833333, 0.9633)
 
 [node name="Gem4" parent="Gems" instance=ExtResource("11_ve1da")]
