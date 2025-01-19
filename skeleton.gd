@@ -34,7 +34,7 @@ func take_damage():
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta #gravity for skeleton
-	if chase == true:
+	if chase:
 		player = get_node("../../Player/Samurai") #get reference to player node.
 		var direction = (player.position - self.position).normalized() #direction vector between enemy and player, normalized converts result to unit vector (-1 is left, 1 is right)
 		#print(direction)
@@ -68,6 +68,8 @@ func attack():
 
 func update_animation(): #Handles all move and jump animation logic.
 	if is_alive:
+		if attacking:
+			return
 		if !attacking: #as long as we are not attacking
 			if velocity.x != 0: #if we are not idle
 				anim.play("Walk")
