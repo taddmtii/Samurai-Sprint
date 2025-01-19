@@ -84,6 +84,8 @@ func die():
 	anim.play("Death")
 	await anim.animation_finished
 	queue_free()
+	player.skeletons_killed += 1
+	print("Skeletons Killed: ", player.skeletons_killed)
 
 #if skelton falls off map
 func _on_death_wall_body_entered(body: Node2D) -> void:

@@ -10,3 +10,5 @@ res://fireball.tscn
 res://gem.tscn
 res://level_one.gd
 res://level_completed.tscn
+res://skeleton.gd
+res://Player/samurai.gd

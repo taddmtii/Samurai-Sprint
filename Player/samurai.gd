@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var is_alive = true
 @export var attacking = false
 @export var gem_count = 0
+@export var skeletons_killed = 0
 var is_hit = false
 @export var immune = false
 @onready var sword_hitbox = $SwordHitBox #area for hitbox
