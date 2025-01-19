@@ -7,9 +7,9 @@ func _ready() -> void:
 	var stats = get_tree().get_meta("level_stats")
 	#player = get_node("../Player/Samurai") #get reference to player node.
 	overall_score = int(stats.gems * 200) + int(stats.skeletons * 50)
-	$"Title Screen/MarginContainer/VBoxContainer/Gems".text = "Gems: " + str(stats.gems)
-	$"Title Screen/MarginContainer/VBoxContainer/Skeletons Killed".text = "Skeletons Killed: " + str(stats.skeletons)
-	$"Title Screen/MarginContainer/VBoxContainer/Overall Score".text = "Overall Score: " + str(overall_score)
+	$MarginContainer/VBoxContainer/Gems.text = "Gems: " + str(stats.gems)
+	$"MarginContainer/VBoxContainer/Skeletons Killed".text = "Skeletons Killed: " + str(stats.skeletons)
+	$"MarginContainer/VBoxContainer/Overall Score".text = "Overall Score: " + str(overall_score)
 	
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://level_one.tscn")

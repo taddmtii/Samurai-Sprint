@@ -1,12 +1,13 @@
-Label
+VBoxContainer
+Area2D
 Node2D
+CollisionShape2D
+Label
 CanvasLayer
 TextureRect
 Panel
 Control
-CollisionShape2D
 Sprite2D
-Area2D
 Timer
 ProgressBar
 CharacterBody2D

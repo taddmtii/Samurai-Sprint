@@ -456,16 +456,16 @@ position = Vector2(89, 296)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Skeleton" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(812, 295)
+position = Vector2(530, 200)
 
 [node name="Skeleton2" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(682, 278)
+position = Vector2(809, 304)
 
 [node name="Skeleton3" parent="Mobs" instance=ExtResource("6_6bolc")]
 position = Vector2(277, 305)
 
 [node name="Skeleton4" parent="Mobs" instance=ExtResource("6_6bolc")]
-position = Vector2(978, 300)
+position = Vector2(1174, 252)
 
 [node name="Skeleton5" parent="Mobs" instance=ExtResource("6_6bolc")]
 position = Vector2(1523, 304)

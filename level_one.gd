@@ -18,3 +18,5 @@ func _on_finish_sign_body_entered(body: Node2D) -> void:
 			}
 			get_tree().set_meta("level_stats", stats)
 			get_tree().call_deferred("change_scene_to_file", "res://level_completed.tscn")
+
+		
