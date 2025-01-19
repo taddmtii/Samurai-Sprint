@@ -17,10 +17,10 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 242.0
-offset_top = 84.0
-offset_right = 903.0
-offset_bottom = 263.0
+offset_left = 250.0
+offset_top = 200.0
+offset_right = 911.0
+offset_bottom = 379.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_wc00s")
 text = "CREDITS:
 
@@ -33,10 +33,10 @@ Dark Samurai Sprite Pack by AimMaga - https://aimmaga.itch.io/darksamurai
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 510.0
-offset_top = 281.0
-offset_right = 555.0
-offset_bottom = 312.0
+offset_left = 529.0
+offset_top = 406.0
+offset_right = 574.0
+offset_bottom = 437.0
 text = "Back"
 
 [connection signal="pressed" from="BackButton" to="Title Screen" method="_on_back_button_pressed"]

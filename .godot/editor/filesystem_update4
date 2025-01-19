@@ -13,3 +13,4 @@ res://level_completed.tscn
 res://skeleton.gd
 res://Player/samurai.gd
 res://hud.gd
+res://level_completed.gd
