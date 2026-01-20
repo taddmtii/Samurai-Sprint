@@ -18,6 +18,3 @@ Explore different powerups:
 ![image](https://github.com/user-attachments/assets/09cef40b-b292-4de0-b582-958883672ac3)
 
 ![image](https://github.com/user-attachments/assets/d4bd1ae6-fb98-4c34-949b-5fb18f3ae533)
-
-
-This is a work in progress currently, check commit history for current progress.
